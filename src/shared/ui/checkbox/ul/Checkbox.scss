@@ -1,0 +1,60 @@
+@import '../../../../app/index.scss';
+
+.checkbox {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(9, 115, 253, 0.05);
+  }
+
+  input {
+    appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    position: relative;
+
+    &:hover {
+      border-color: $blue-primary;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 6px;
+      width: 5px;
+      height: 10px;
+      border: solid transparent;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    &:checked {
+      background-color: $blue-primary;
+      border-color: $blue-primary;
+
+      &::after {
+        border-color: white;
+        opacity: 1;
+      }
+    }
+  }
+
+  label {
+    cursor: pointer;
+  }
+}
